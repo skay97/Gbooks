@@ -1,7 +1,7 @@
 import React from "react";
 import JumbotronR from "../Jumbotron/jumbotron";
 
-const Saveed = () => {
+const Saved = () => {
 
     return (
         <JumbotronR/>
@@ -9,4 +9,4 @@ const Saveed = () => {
 
 }
 
-export default Saveed;
+export default Saved;
