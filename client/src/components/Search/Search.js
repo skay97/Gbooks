@@ -2,7 +2,10 @@ import React from "react";
 import "./Search.css";
 import JumbotronR from "../Jumbotron/jumbotron";
 import SearchBox from "../SearchBox/SearchBox";
-import API from "../../utils/API"
+import getBooks from "../../utils/API";
+import BookShelf from "../BookShelf/BookShelf";
+// import { Container, Row, Col } from 'reactstrap';
+
 
 class Search extends React.Component {
 
@@ -10,8 +13,10 @@ class Search extends React.Component {
         books: []
     }
 
-    getTheBooks = (query) => {
-        API.getBooks(query).then(books => console.log(books))
+    getTheBooks = async query => {
+        const returnBooks = await getBooks(query).then(books => books.data.items)
+        this.setState({ books: returnBooks })
+        console.log(this.state.books)
     }
 
 
@@ -20,14 +25,15 @@ class Search extends React.Component {
 
         return (
             <>
-                <JumbotronR />
-                <SearchBox />
-                <div className="booksContainer">
-                <button onClick = {()=>{
-                    this.getTheBooks("origins")
-                }}></button>
-                    <h1>Hi</h1>
-                </div>
+            {/* <Container>
+                <Row>
+                    <Col> */}
+                        <JumbotronR />
+                        <SearchBox getTheBooks={this.getTheBooks} />
+                        <BookShelf books={this.state.books} />
+                    {/* </Col>
+                </Row>
+            </Container> */}
             </>
         )
     }
