@@ -15,11 +15,10 @@ class Search extends React.Component {
     getTheBooks = async query => {
         const returnBooks = await getBooks(query).then(books => books.data.items)
         this.setState({ books: returnBooks })
-        console.log(this.state.books)
+        console.log('Data from the API:', this.state.books)
     }
 
     clicked = (data) => {
-        console.log(data)
         Axios.post("/api/data", data).then((data) => { console.log(data) })
     }
 

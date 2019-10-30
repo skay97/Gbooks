@@ -26,8 +26,6 @@ class SearchBox extends React.Component {
         // Preventing the default behavior of the form submit (which is to refresh the page)
         event.preventDefault();
 
-        console.log(this.state.bookName)
-
         this.props.getTheBooks(this.state.bookName)
 
     };
