@@ -29,15 +29,9 @@ class Search extends React.Component {
 
         return (
             <>
-                {/* <Container>
-                <Row>
-                    <Col> */}
                 <JumbotronR />
                 <SearchBox getTheBooks={this.getTheBooks} />
                 <BookShelf books={this.state.books} clicked={this.clicked} />
-                {/* </Col>
-                </Row>
-            </Container> */}
             </>
         )
     }
