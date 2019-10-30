@@ -23,7 +23,7 @@ const BookShelf = (props) => {
                               <CardSubtitle>Category: {books.volumeInfo.categories}</CardSubtitle>
                               <CardText>Short Description:{books.volumeInfo.description}</CardText>
                               <Button color="secondary" href={books.volumeInfo.infoLink} target="_blank" >View Book</Button>
-                              <Button onClick={() => {
+                              <Button disabled onClick={() => {
                                  props.clicked({
                                     author: books.volumeInfo.authors.join(","),
                                     category: books.volumeInfo.categories.join(","),
