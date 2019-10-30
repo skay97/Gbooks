@@ -4,8 +4,7 @@ import {
    CardTitle, CardSubtitle, Button,
    Container, Row, Col
 } from 'reactstrap';
-// CardImg
-// CardLink
+
 const BookShelf = (props) => {
    return <div>{props.books.map((books) => {
       return (
@@ -14,7 +13,7 @@ const BookShelf = (props) => {
             <Row>
                <Col>
                   <Card>
-                     <CardBody style = {{backgroundColor: "#e9ecef"}}>
+                     <CardBody style={{ backgroundColor: "#e9ecef" }}>
                         <Row>
                            <Col xs="2">
                               <CardImg style={{ maxWidth: "100%" }} src={books.volumeInfo.imageLinks.smallThumbnail} alt="Card image cap" />
@@ -24,6 +23,15 @@ const BookShelf = (props) => {
                               <CardSubtitle>Category: {books.volumeInfo.categories}</CardSubtitle>
                               <CardText>Short Description:{books.volumeInfo.description}</CardText>
                               <Button color="secondary" href={books.volumeInfo.infoLink} target="_blank" >View Book</Button>
+                              <Button onClick={() => {
+                                 props.clicked({
+                                    author: books.volumeInfo.authors.join(","),
+                                    category: books.volumeInfo.categories.join(","),
+                                    description: books.volumeInfo.description,
+                                    href: books.volumeInfo.infoLink,
+                                    src: books.volumeInfo.imageLinks.smallThumbnail
+                                 })
+                              }} >Save Book</Button>
                            </Col>
                         </Row>
                      </CardBody>

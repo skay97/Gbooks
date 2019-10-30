@@ -8,8 +8,7 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink, 
-  // Container, Row, Col
+  NavLink,
 } from 'reactstrap';
 
 
@@ -33,21 +32,21 @@ export default class Navigation extends Component {
         {/* <Container>
           <Row>
             <Col> */}
-              <Navbar color="light" light expand="md">
-                <NavbarBrand href="/">Gbooks</NavbarBrand>
-                <NavbarToggler onClick={this.toggle} />
-                <Collapse isOpen={this.state.isOpen} navbar>
-                  <Nav className="ml-auto" navbar>
-                    <NavItem>
-                      <NavLink href="/search">Search</NavLink>
-                    </NavItem>
-                    <NavItem>
-                      <NavLink href="/save">Saved Books(Coming Soon)</NavLink>
-                    </NavItem>
-                  </Nav>
-                </Collapse>
-              </Navbar>
-            {/* </Col>
+        <Navbar color="light" light expand="md">
+          <NavbarBrand href="/">Gbooks</NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink href="/search">Search</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/save">Saved Books(Coming Soon)</NavLink>
+              </NavItem>
+            </Nav>
+          </Collapse>
+        </Navbar>
+        {/* </Col>
           </Row>
         </Container> */}
       </div>

@@ -4,8 +4,7 @@ import JumbotronR from "../Jumbotron/jumbotron";
 import SearchBox from "../SearchBox/SearchBox";
 import getBooks from "../../utils/API";
 import BookShelf from "../BookShelf/BookShelf";
-// import { Container, Row, Col } from 'reactstrap';
-
+import Axios from "axios";
 
 class Search extends React.Component {
 
@@ -19,19 +18,24 @@ class Search extends React.Component {
         console.log(this.state.books)
     }
 
+    clicked = (data) => {
+        console.log(data)
+        Axios.post("/api/data", data).then((data) => { console.log(data) })
+    }
+
 
     render() {
 
 
         return (
             <>
-            {/* <Container>
+                {/* <Container>
                 <Row>
                     <Col> */}
-                        <JumbotronR />
-                        <SearchBox getTheBooks={this.getTheBooks} />
-                        <BookShelf books={this.state.books} />
-                    {/* </Col>
+                <JumbotronR />
+                <SearchBox getTheBooks={this.getTheBooks} />
+                <BookShelf books={this.state.books} clicked={this.clicked} />
+                {/* </Col>
                 </Row>
             </Container> */}
             </>

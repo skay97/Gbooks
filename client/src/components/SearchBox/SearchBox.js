@@ -2,7 +2,6 @@ import React from 'react';
 import {
     Card, Input, CardHeader, CardBody,
     CardTitle, CardText, InputGroup, Form, Button,
-    // Container, Row, Col
 } from 'reactstrap'
 
 
@@ -36,34 +35,27 @@ class SearchBox extends React.Component {
 
     render() {
         return (
-            // <Container>
-            //     <Row>
-            //         <Col>
-                        <Card>
-                            <CardHeader>Header</CardHeader>
-                            <CardBody>
-                                <CardTitle>Special Title Treatment</CardTitle>
-                                <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                                <Form onSubmit={this.handleFormSubmit}>
-                                    <InputGroup>
-                                        <Input
-                                            id="searchField"
-                                            value={this.state.bookName}
-                                            name="bookName"
-                                            onChange={this.handleInputChange}
-                                            type="text"
-                                            placeholder="book name"
-                                        />
-                                        <br />
-                                        <Button>Submit</Button>
-                                    </InputGroup>
-                                </Form>
-                            </CardBody>
-                        </Card>
-            //         </Col>
-            //     </Row>
-            // </Container>
-
+            <Card>
+                <CardHeader>Header</CardHeader>
+                <CardBody>
+                    <CardTitle>Special Title Treatment</CardTitle>
+                    <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                    <Form onSubmit={this.handleFormSubmit}>
+                        <InputGroup>
+                            <Input
+                                id="searchField"
+                                value={this.state.bookName}
+                                name="bookName"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="book name"
+                            />
+                            <br />
+                            <Button>Submit</Button>
+                        </InputGroup>
+                    </Form>
+                </CardBody>
+            </Card>
 
         )
 
